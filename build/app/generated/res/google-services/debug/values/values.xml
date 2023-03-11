@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">245154033762-mb37so3pvqviuskmdsm1i6g2s28e9l2t.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">245154033762</string>
+    <string name="google_api_key" translatable="false">AIzaSyDWmkWkmRFTxBR6uFQPW3BvC8nE3nL1xlY</string>
+    <string name="google_app_id" translatable="false">1:245154033762:android:6fa717e2a00121a988e13b</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDWmkWkmRFTxBR6uFQPW3BvC8nE3nL1xlY</string>
+    <string name="google_storage_bucket" translatable="false">course-advisory.appspot.com</string>
+    <string name="project_id" translatable="false">course-advisory</string>
+</resources>
