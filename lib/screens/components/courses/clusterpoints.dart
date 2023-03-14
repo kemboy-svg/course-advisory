@@ -8,6 +8,7 @@ void main() async {
   runApp(MyApp());
 }
 
+
 class Cluster {
   final List<String> _grades;
 
@@ -27,6 +28,8 @@ class Cluster {
     double average = totalPoints / count;
     return average.round();
   }
+
+
 
   int _getPointsFromGrade(String grade) {
     int points = 0;
@@ -108,14 +111,22 @@ class _MyAppState extends State<MyApp> {
 
     setState(() {});
   }
+  String _getClusterPointsMessage() {
+    if (_clusterPoints == null) {
+      return 'Enter your grades to calculate your cluster points.';
+    } else {
+      return 'Your cluster points are $_clusterPoints.';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Cluster Points Calculator',
       home: Scaffold(
+      resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          title: Text('Cluster Points Calculator'),
+          title: const Text('Cluster Points Calculator'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -123,40 +134,51 @@ class _MyAppState extends State<MyApp> {
               Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
             TextField(
               controller: _grade1Controller,
-              decoration: InputDecoration(labelText: 'Subject 1 Grade'),
+              decoration: const InputDecoration(labelText: 'Subject 1 Grade'),
             ),
             TextField(
               controller: _grade2Controller,
-              decoration: InputDecoration(labelText: 'Subject 2 Grade'),
+              decoration: const InputDecoration(labelText: 'Subject 2 Grade'),
             ),
             TextField(
               controller: _grade3Controller,
-              decoration: InputDecoration(labelText: 'Subject 3 Grade'),
+              decoration: const InputDecoration(labelText: 'Subject 3 Grade'),
             ),
             TextField(
               controller: _grade4Controller,
-              decoration: InputDecoration(labelText: 'Subject 4 Grade'),
+              decoration: const InputDecoration(labelText: 'Subject 4 Grade'),
             ),
             TextField(
               controller: _grade5Controller,
-              decoration: InputDecoration(labelText: 'Subject 5 Grade'),
+              decoration: const InputDecoration(labelText: 'Subject 5 Grade'),
             ),
-            TextField(
-              controller: _grade6Controller,
-              decoration: InputDecoration(labelText: 'Subject 6 Grade'),
-            ),
-            TextField(
-              controller: _grade6Controller,
-              decoration: InputDecoration(labelText: 'Subject 7 Grade'),
-            ),
-            TextField(
-              controller: _grade6Controller,
-              decoration: InputDecoration(labelText: 'Subject 8 Grade'),
-            ),
-          ]
+           TextField(
+              controller: _grade6Controller, 
+              decoration: const InputDecoration(labelText: 'Subject 6 Grade'),
+           ),
+          TextField(
+              controller: _grade7Controller,
+              decoration: const InputDecoration(labelText: 'Subject 7 Grade'),
           ),
-        ),
-      ),
-    );
-  }
+         TextField(
+             controller: _grade8Controller,
+             decoration: const InputDecoration(labelText: 'Subject 8 Grade'),
+         ),
+     const SizedBox(height: 16.0),
+      ElevatedButton(
+        onPressed: _calculateClusterPoints,
+      child: const Text ('Calculate Cluster Points'),
+),
+const SizedBox(height: 16.0),
+Text(
+_getClusterPointsMessage(),
+style: const TextStyle(fontSize: 20.0),
+),
+],
+),
+),
+),
+);
+}
+  
 }
