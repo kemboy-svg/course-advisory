@@ -122,11 +122,11 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Cluster Points Calculator',
+      title: 'Enter your grades',
       home: Scaffold(
       resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          title: const Text('Cluster Points Calculator'),
+          title: const Text('Enter your grades'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -134,15 +134,15 @@ class _MyAppState extends State<MyApp> {
               Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
             TextField(
               controller: _grade1Controller,
-              decoration: const InputDecoration(labelText: 'Subject 1 Grade'),
+              decoration: const InputDecoration(labelText: 'English Grade'),
             ),
             TextField(
               controller: _grade2Controller,
-              decoration: const InputDecoration(labelText: 'Subject 2 Grade'),
+              decoration: const InputDecoration(labelText: 'Mathematics Grade'),
             ),
             TextField(
               controller: _grade3Controller,
-              decoration: const InputDecoration(labelText: 'Subject 3 Grade'),
+              decoration: const InputDecoration(labelText: 'Kiswahili Grade'),
             ),
             TextField(
               controller: _grade4Controller,
