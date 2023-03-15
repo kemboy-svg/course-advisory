@@ -165,9 +165,15 @@ class _MyAppState extends State<MyApp> {
              decoration: const InputDecoration(labelText: 'Subject 8 Grade'),
          ),
      const SizedBox(height: 16.0),
+     
       ElevatedButton(
         onPressed: _calculateClusterPoints,
       child: const Text ('Calculate Cluster Points'),
+),
+
+      ElevatedButton(
+        onPressed: _calculateClusterPoints,
+      child: const Text ('Checkout your courses'),
 ),
 const SizedBox(height: 16.0),
 Text(

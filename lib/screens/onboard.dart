@@ -52,13 +52,12 @@ class _CompleteFormState extends State<CompleteForm> {
   bool _ageHasError = false;
   bool _interestsHasError = false;
 
-  var genderOptions = ['Medicine', 'Engineering', 'Teaching'];
+  var courseOptions = ['Medicine', 'Engineering', 'Teaching','Nursing'];
 
   void _onChanged(dynamic val) => debugPrint(val.toString());
 
   @override
   Widget build(BuildContext context) {
-    CollectionReference programs = FirebaseFirestore.instance.collection('programs');
     return Scaffold(
       appBar: AppBar(title: const Text('Please select your interest')),
       body: StreamBuilder(
@@ -197,7 +196,7 @@ class _CompleteFormState extends State<CompleteForm> {
                           validator: FormBuilderValidators.compose(
                               [FormBuilderValidators.required()]),
 
-                          items: genderOptions
+                          items: courseOptions
                               .map((interests) => DropdownMenuItem (
                                     alignment: AlignmentDirectional.center,
                                     value: interests,
