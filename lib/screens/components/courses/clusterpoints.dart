@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:dashboard/screens/components/courses/courses.dart';
 
 void main() async {
   //Initializing Database when starting the application.
@@ -24,7 +25,7 @@ class Cluster {
       }
     }
 
-    double average = totalPoints / count;
+    double average = totalPoints / count * 4;
     return average.round();
   }
 
@@ -146,23 +147,24 @@ class _MyAppState extends State<MyApp> {
               ),
               TextField(
                 controller: _grade4Controller,
-                decoration: const InputDecoration(labelText: 'Subject 4 Grade'),
+                decoration: const InputDecoration(labelText: 'Biology Grade'),
               ),
               TextField(
                 controller: _grade5Controller,
-                decoration: const InputDecoration(labelText: 'Subject 5 Grade'),
+                decoration: const InputDecoration(labelText: 'Chemistry Grade'),
               ),
               TextField(
                 controller: _grade6Controller,
-                decoration: const InputDecoration(labelText: 'Subject 6 Grade'),
+                decoration: const InputDecoration(labelText: 'Physics Grade'),
               ),
               TextField(
                 controller: _grade7Controller,
-                decoration: const InputDecoration(labelText: 'Subject 7 Grade'),
+                decoration: const InputDecoration(labelText: 'History Grade'),
               ),
               TextField(
                 controller: _grade8Controller,
-                decoration: const InputDecoration(labelText: 'Subject 8 Grade'),
+                decoration:
+                    const InputDecoration(labelText: 'Agriculture Grade'),
               ),
               const SizedBox(height: 16.0),
               Row(
@@ -181,8 +183,10 @@ class _MyAppState extends State<MyApp> {
                   const SizedBox(width: 20),
                   Expanded(
                     child: OutlinedButton(
-                      onPressed: () {},
-                      // color: Theme.of(context).colorScheme.secondary,
+                      onPressed: () {
+                        _navigateToNextScreen(context);
+                      },
+                      
                       child: Text(
                         'Checkout your courses',
                         style: TextStyle(
@@ -202,5 +206,10 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
     );
+  }
+
+  void _navigateToNextScreen(BuildContext context) {
+    Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => MyApp()));
   }
 }
