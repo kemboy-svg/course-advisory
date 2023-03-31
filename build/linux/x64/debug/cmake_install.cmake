@@ -1,8 +1,8 @@
-# Install script for directory: /home/decoder/Dev/Flutter/course-advisory/linux
+# Install script for directory: /home/brayoo/dev/flutter/course-advisory/linux
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle")
+  set(CMAKE_INSTALL_PREFIX "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,83 +39,83 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
   
-  file(REMOVE_RECURSE "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/")
+  file(REMOVE_RECURSE "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/")
   
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/dashboard" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/dashboard")
+  if(EXISTS "$ENV{DESTDIR}/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/dashboard" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/dashboard")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/dashboard"
+         FILE "$ENV{DESTDIR}/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/dashboard"
          RPATH "$ORIGIN/lib")
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/dashboard")
+   "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/dashboard")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle" TYPE EXECUTABLE FILES "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/intermediates_do_not_run/dashboard")
-  if(EXISTS "$ENV{DESTDIR}/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/dashboard" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/dashboard")
+file(INSTALL DESTINATION "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle" TYPE EXECUTABLE FILES "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/intermediates_do_not_run/dashboard")
+  if(EXISTS "$ENV{DESTDIR}/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/dashboard" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/dashboard")
     file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/dashboard"
-         OLD_RPATH "/home/decoder/Dev/Flutter/course-advisory/linux/flutter/ephemeral:"
+         FILE "$ENV{DESTDIR}/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/dashboard"
+         OLD_RPATH "/home/brayoo/dev/flutter/course-advisory/linux/flutter/ephemeral:"
          NEW_RPATH "$ORIGIN/lib")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/snap/flutter/current/usr/bin/strip" "$ENV{DESTDIR}/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/dashboard")
+      execute_process(COMMAND "/snap/flutter/current/usr/bin/strip" "$ENV{DESTDIR}/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/dashboard")
     endif()
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/data/icudtl.dat")
+   "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/data/icudtl.dat")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/data" TYPE FILE FILES "/home/decoder/Dev/Flutter/course-advisory/linux/flutter/ephemeral/icudtl.dat")
+file(INSTALL DESTINATION "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/data" TYPE FILE FILES "/home/brayoo/dev/flutter/course-advisory/linux/flutter/ephemeral/icudtl.dat")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so")
+   "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/lib" TYPE FILE FILES "/home/decoder/Dev/Flutter/course-advisory/linux/flutter/ephemeral/libflutter_linux_gtk.so")
+file(INSTALL DESTINATION "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/lib" TYPE FILE FILES "/home/brayoo/dev/flutter/course-advisory/linux/flutter/ephemeral/libflutter_linux_gtk.so")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
   
-  file(REMOVE_RECURSE "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/data/flutter_assets")
+  file(REMOVE_RECURSE "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/data/flutter_assets")
   
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xRuntimex" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/data/flutter_assets")
+   "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/data/flutter_assets")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle/data" TYPE DIRECTORY FILES "/home/decoder/Dev/Flutter/course-advisory/build//flutter_assets")
+file(INSTALL DESTINATION "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle/data" TYPE DIRECTORY FILES "/home/brayoo/dev/flutter/course-advisory/build//flutter_assets")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/flutter/cmake_install.cmake")
+  include("/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/flutter/cmake_install.cmake")
 
 endif()
 
@@ -127,5 +127,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

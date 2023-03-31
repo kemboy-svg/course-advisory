@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/decoder/Dev/Flutter/course-advisory/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/brayoo/dev/flutter/course-advisory/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/decoder/Dev/Flutter/course-advisory/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/brayoo/dev/flutter/course-advisory/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

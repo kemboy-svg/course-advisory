@@ -1,12 +1,18 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:dashboard/screens/components/courses/courses.dart';
+import 'package:dashboard/screens/components/courses/course_recommendation.dart.dart';
+import 'package:dashboard/screens/onboard.dart';
 
 void main() async {
-  //Initializing Database when starting the application.
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+
+  // Replace the following line with the actual interest value
+  String interest = "your interst";
+
+  runApp(MyApp(interest: interest));
 }
 
 class Cluster {
@@ -76,11 +82,35 @@ class Cluster {
 }
 
 class MyApp extends StatefulWidget {
+  final String interest;
+
+  MyApp({required this.interest});
+
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+   ValueNotifier<bool> isLoading = ValueNotifier<bool>(false);
+    void _navigateToCourseRecommendation(BuildContext context) async {
+    isLoading.value = true;
+
+    await Future.delayed(Duration(seconds: 2));
+
+    isLoading.value = false;
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => CourseRecommendation(
+          interest: "Engineering", // Replace with the user's interest
+          points: _clusterPoints,
+          isLoading: isLoading, // Pass the ValueNotifier to the next screen
+        ),
+      ),
+    );
+  }
+
   final TextEditingController _grade1Controller = TextEditingController();
   final TextEditingController _grade2Controller = TextEditingController();
   final TextEditingController _grade3Controller = TextEditingController();
@@ -184,9 +214,8 @@ class _MyAppState extends State<MyApp> {
                   Expanded(
                     child: OutlinedButton(
                       onPressed: () {
-                        _navigateToNextScreen(context);
+                        _navigateToCourseRecommendation(context);
                       },
-                      
                       child: Text(
                         'Checkout your courses',
                         style: TextStyle(
@@ -206,10 +235,5 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
     );
-  }
-
-  void _navigateToNextScreen(BuildContext context) {
-    Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => MyApp()));
   }
 }

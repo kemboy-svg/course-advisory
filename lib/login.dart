@@ -103,21 +103,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     _navigateToNextScreen(context);
                   },
                 )),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: <Widget>[
-            //     const Text('Does not have account?'),
-            //     TextButton(
-            //       child: const Text(
-            //         'Sign in',
-            //         style: TextStyle(fontSize: 20),
-            //       ),
-            //       onPressed: () {
-            //         //signup screen
-            //       },
-            //     )
-            //   ],
-            // ),
+            
           ],
         ));
   }

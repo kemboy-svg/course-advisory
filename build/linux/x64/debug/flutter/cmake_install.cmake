@@ -1,8 +1,8 @@
-# Install script for directory: /home/decoder/Dev/Flutter/course-advisory/linux/flutter
+# Install script for directory: /home/brayoo/dev/flutter/course-advisory/linux/flutter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug/bundle")
+  set(CMAKE_INSTALL_PREFIX "/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug/bundle")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

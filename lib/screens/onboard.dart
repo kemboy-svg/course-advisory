@@ -12,15 +12,13 @@ void main() async {
   await Firebase.initializeApp();
   runApp(const OnBoard());
 }
-String? selectedInterest;
-
 
 class Subject {
   String name;
   Subject({required this.name});
 }
-List<String> courseOptions = ['Medicine', 'Engineering', 'Teaching', 'Nursing'];
 
+List<String> courseOptions = ['Medicine', 'Engineering', 'Teaching', 'Nursing'];
 
 class OnBoard extends StatelessWidget {
   const OnBoard({Key? key}) : super(key: key);
@@ -65,7 +63,6 @@ class _CompleteFormState extends State<CompleteForm> {
     'Nursing'
   ];
   String? selectedInterest;
-  String? val;
 
   void _onChanged(dynamic val) => debugPrint(val.toString());
 
@@ -201,6 +198,7 @@ class _CompleteFormState extends State<CompleteForm> {
                             textInputAction: TextInputAction.next,
                           ),
                           DropdownButtonFormField<String>(
+                            // ignore: prefer_const_constructors
                             decoration: InputDecoration(
                               labelText: 'Select your Interest',
                               hintText: 'Select your interests',
@@ -213,7 +211,7 @@ class _CompleteFormState extends State<CompleteForm> {
                                       child: Text(interest),
                                     ))
                                 .toList(),
-                                
+
                             onChanged: (choice) {
                               setState(() {
                                 selectedInterest = choice;
@@ -228,7 +226,6 @@ class _CompleteFormState extends State<CompleteForm> {
                                 return 'Please select your interests';
                               }
                               return null;
-                              
                             },
                           ),
                         ],
@@ -282,7 +279,9 @@ class _CompleteFormState extends State<CompleteForm> {
   }
 
   void _navigateToNextScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MyApp()));
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => MyApp(
+              interest: 'Engineering',
+            )));
   }
 }

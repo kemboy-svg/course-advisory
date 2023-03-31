@@ -1,6 +1,6 @@
 # Generated code do not commit.
-file(TO_CMAKE_PATH "/home/decoder/snap/flutter/common/flutter" FLUTTER_ROOT)
-file(TO_CMAKE_PATH "/home/decoder/Dev/Flutter/course-advisory" PROJECT_DIR)
+file(TO_CMAKE_PATH "/home/brayoo/snap/flutter/common/flutter" FLUTTER_ROOT)
+file(TO_CMAKE_PATH "/home/brayoo/dev/flutter/course-advisory" PROJECT_DIR)
 
 set(FLUTTER_VERSION "1.0.0+1" PARENT_SCOPE)
 set(FLUTTER_VERSION_MAJOR 1 PARENT_SCOPE)
@@ -10,12 +10,12 @@ set(FLUTTER_VERSION_BUILD 1 PARENT_SCOPE)
 
 # Environment variables to pass to tool_backend.sh
 list(APPEND FLUTTER_TOOL_ENVIRONMENT
-  "FLUTTER_ROOT=/home/decoder/snap/flutter/common/flutter"
-  "PROJECT_DIR=/home/decoder/Dev/Flutter/course-advisory"
+  "FLUTTER_ROOT=/home/brayoo/snap/flutter/common/flutter"
+  "PROJECT_DIR=/home/brayoo/dev/flutter/course-advisory"
   "DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ=="
   "DART_OBFUSCATION=false"
   "TRACK_WIDGET_CREATION=true"
   "TREE_SHAKE_ICONS=false"
-  "PACKAGE_CONFIG=/home/decoder/Dev/Flutter/course-advisory/.dart_tool/package_config.json"
-  "FLUTTER_TARGET=/home/decoder/Dev/Flutter/course-advisory/lib/main.dart"
+  "PACKAGE_CONFIG=/home/brayoo/dev/flutter/course-advisory/.dart_tool/package_config.json"
+  "FLUTTER_TARGET=/home/brayoo/dev/flutter/course-advisory/lib/main.dart"
 )

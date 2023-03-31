@@ -42,7 +42,7 @@ rule CXX_EXECUTABLE_LINKER__dashboard
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /snap/flutter/130/usr/bin/cmake -S/home/decoder/Dev/Flutter/course-advisory/linux -B/home/decoder/Dev/Flutter/course-advisory/build/linux/x64/debug
+  command = /snap/flutter/130/usr/bin/cmake -S/home/brayoo/dev/flutter/course-advisory/linux -B/home/brayoo/dev/flutter/course-advisory/build/linux/x64/debug
   description = Re-running CMake...
   generator = 1
 
