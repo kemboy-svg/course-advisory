@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:dashboard/screens/components/courses/course_recommendation.dart.dart';
+import 'package:dashboard/screens/components/courses/course_recommendation.dart';
 import 'package:dashboard/screens/onboard.dart';
 
 void main() async {
@@ -11,7 +11,6 @@ void main() async {
 
   // Replace the following line with the actual interest value
   String interest = "your interest";
-
 
   runApp(MyApp(interest: interest));
 }
@@ -92,30 +91,31 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-   ValueNotifier<bool> isLoading = ValueNotifier<bool>(false);
-   
+  bool isLoading = false;
 
-   
-     
-    void _navigateToCourseRecommendation(BuildContext context) async {
-    isLoading.value = true;
+  void _navigateToCourseRecommendation(BuildContext context) async {
+  setState(() {
+    isLoading = true;
+  });
 
-    await Future.delayed(Duration(seconds: 2));
+  await Future.delayed(Duration(seconds: 2));
 
-    isLoading.value = false;
+  setState(() {
+    isLoading = false;
+  });
 
-    
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => CourseRecommendation(
-          interest: "Engineering",// Replace with the user's selected interest
-          points: _clusterPoints,
-          isLoading: isLoading, // Pass the ValueNotifier to the next screen
-        ),
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => CourseRecommendation(
+        interest: widget.interest, // Pass the user's selected interest
+        points: _clusterPoints,
+        isLoading: ValueNotifier<bool>(false), // Pass the ValueNotifier to the next screen
       ),
-    );
-  }
+    ),
+  );
+}
+
 
   final TextEditingController _grade1Controller = TextEditingController();
   final TextEditingController _grade2Controller = TextEditingController();

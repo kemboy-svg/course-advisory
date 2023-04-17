@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dashboard/screens/onboard.dart';
-
+import 'package:dashboard/screens/components/courses/clusterpoints.dart';
 class CourseRecommendation extends StatelessWidget {
   
 
