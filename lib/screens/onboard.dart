@@ -276,12 +276,14 @@ class _CompleteFormState extends State<CompleteForm> {
             );
           }),
     );
+
+    
   }
 
   void _navigateToNextScreen(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => MyApp(
-              interest: 'Engineering',
+              interest: ""
             )));
   }
 }

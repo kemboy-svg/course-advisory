@@ -10,7 +10,8 @@ void main() async {
   await Firebase.initializeApp();
 
   // Replace the following line with the actual interest value
-  String interest = "your interst";
+  String interest = "your interest";
+
 
   runApp(MyApp(interest: interest));
 }
@@ -92,6 +93,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
    ValueNotifier<bool> isLoading = ValueNotifier<bool>(false);
+   
+
+   
+     
     void _navigateToCourseRecommendation(BuildContext context) async {
     isLoading.value = true;
 
@@ -99,11 +104,12 @@ class _MyAppState extends State<MyApp> {
 
     isLoading.value = false;
 
+    var selectedInterest;
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => CourseRecommendation(
-          interest: "Engineering", // Replace with the user's interest
+          interest: selectedInterest, // Replace with the user's selected interest
           points: _clusterPoints,
           isLoading: isLoading, // Pass the ValueNotifier to the next screen
         ),
