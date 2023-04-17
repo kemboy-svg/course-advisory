@@ -104,12 +104,12 @@ class _MyAppState extends State<MyApp> {
 
     isLoading.value = false;
 
-    var selectedInterest;
+    
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => CourseRecommendation(
-          interest: selectedInterest, // Replace with the user's selected interest
+          interest: "Engineering",// Replace with the user's selected interest
           points: _clusterPoints,
           isLoading: isLoading, // Pass the ValueNotifier to the next screen
         ),
