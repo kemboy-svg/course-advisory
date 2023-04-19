@@ -98,7 +98,7 @@ class _MyAppState extends State<MyApp> {
     isLoading = true;
   });
 
-  await Future.delayed(Duration(seconds: 2));
+  await Future.delayed(const Duration(seconds: 2));
 
   setState(() {
     isLoading = false;
@@ -164,81 +164,83 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Enter your grades'),
         ),
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              TextField(
-                controller: _grade1Controller,
-                decoration: const InputDecoration(labelText: 'English Grade'),
-              ),
-              TextField(
-                controller: _grade2Controller,
-                decoration:
-                    const InputDecoration(labelText: 'Mathematics Grade'),
-              ),
-              TextField(
-                controller: _grade3Controller,
-                decoration: const InputDecoration(labelText: 'Kiswahili Grade'),
-              ),
-              TextField(
-                controller: _grade4Controller,
-                decoration: const InputDecoration(labelText: 'Biology Grade'),
-              ),
-              TextField(
-                controller: _grade5Controller,
-                decoration: const InputDecoration(labelText: 'Chemistry Grade'),
-              ),
-              TextField(
-                controller: _grade6Controller,
-                decoration: const InputDecoration(labelText: 'Physics Grade'),
-              ),
-              TextField(
-                controller: _grade7Controller,
-                decoration: const InputDecoration(labelText: 'History Grade'),
-              ),
-              TextField(
-                controller: _grade8Controller,
-                decoration:
-                    const InputDecoration(labelText: 'Agriculture Grade'),
-              ),
-              const SizedBox(height: 16.0),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        _calculateClusterPoints();
-                      },
-                      child: const Text(
-                        'Check your cluster',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 20),
-                  Expanded(
-                    child: OutlinedButton(
-                      onPressed: () {
-                        _navigateToCourseRecommendation(context);
-                      },
-                      child: Text(
-                        'Checkout your courses',
-                        style: TextStyle(
-                            color: Theme.of(context).colorScheme.secondary),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16.0),
-              Text(
-                _getClusterPointsMessage(),
-                style: const TextStyle(fontSize: 20.0),
-              ),
-            ],
-          ),
+  padding: const EdgeInsets.all(16.0),
+  child: SingleChildScrollView(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        TextField(
+          controller: _grade1Controller,
+          decoration: const InputDecoration(labelText: 'English Grade'),
         ),
+        TextField(
+          controller: _grade2Controller,
+          decoration:
+              const InputDecoration(labelText: 'Mathematics Grade'),
+        ),
+        TextField(
+          controller: _grade3Controller,
+          decoration: const InputDecoration(labelText: 'Kiswahili Grade'),
+        ),
+        TextField(
+          controller: _grade4Controller,
+          decoration: const InputDecoration(labelText: 'Biology Grade'),
+        ),
+        TextField(
+          controller: _grade5Controller,
+          decoration: const InputDecoration(labelText: 'Chemistry Grade'),
+        ),
+        TextField(
+          controller: _grade6Controller,
+          decoration: const InputDecoration(labelText: 'Physics Grade'),
+        ),
+        TextField(
+          controller: _grade7Controller,
+          decoration: const InputDecoration(labelText: 'History Grade'),
+        ),
+        TextField(
+          controller: _grade8Controller,
+          decoration:
+              const InputDecoration(labelText: 'Agriculture Grade'),
+        ),
+        const SizedBox(height: 16.0),
+        Row(
+          children: <Widget>[
+            Expanded(
+              child: ElevatedButton(
+                onPressed: () {
+                  _calculateClusterPoints();
+                },
+                child: const Text(
+                  'Check your cluster',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: OutlinedButton(
+                onPressed: () {
+                  _navigateToCourseRecommendation(context);
+                },
+                child: Text(
+                  'Checkout your courses',
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary),
+                ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 16.0),
+        Text(
+          _getClusterPointsMessage(),
+          style: const TextStyle(fontSize: 20.0),
+        ),
+      ],
+    ),
+  ),
+),
       ),
     );
   }

@@ -1,134 +1,95 @@
 import 'package:flutter/material.dart';
 import 'package:dashboard/screens/onboard.dart';
 import 'package:dashboard/screens/components/courses/clusterpoints.dart';
-class CourseRecommendation extends StatelessWidget {
-  
 
-   final String interest;
+class CourseRecommendation extends StatelessWidget {
+  final String interest;
   final int points;
   final ValueNotifier<bool> isLoading;
-  
 
-  const CourseRecommendation({super.key, 
+  const CourseRecommendation({
+    Key? key,
     required this.interest,
     required this.points,
     required this.isLoading,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Welcome to your dashboard')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Based on your interest in $interest, here are some recommendations for you:',
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 20),
-            _getRecommendations(interest),
-          ],
+      appBar: AppBar(title: const Text('Welcome to your dashboard')),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Text(
+                'Based on your interest in $interest, here are some recommendations for you:',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              _getRecommendations(interest),
+            ],
+          ),
         ),
       ),
     );
   }
 
   Widget _getRecommendations(String interest) {
+    Widget recommendationCard(String title, String description) {
+      return Card(
+        elevation: 4,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                description,
+                textAlign: TextAlign.justify,
+                style: TextStyle(fontSize: 16),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
     switch (interest) {
       case 'Medicine':
-        return Column(
-          children: <Widget>[
-            Text(
-              '1. Consider taking courses in anatomy, physiology, and pharmacology.',
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              '2. Participate in volunteer work at a hospital or clinic to gain hands-on experience.',
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              '3. Read medical journals and stay updated with the latest medical advancements.',
-              textAlign: TextAlign.center,
-            ),
-          ],
+        return recommendationCard(
+          'Medical Physiology',
+          'These courses provide a detailed understanding of the functions of the human body at the cellular, tissue, and system levels.',
         );
-        break;
       case 'Engineering':
-        return Column(
-          children: <Widget>[
-            Text(
-              '1. Consider taking courses in computer science, mathematics, and physics.',
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              '2. Participate in internships or projects to gain practical experience in your field of interest.',
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              '3. Read technical journals and attend conferences to stay updated with the latest technological advancements.',
-              textAlign: TextAlign.center,
-            ),
-          ],
+        return recommendationCard(
+          'Electrical Engineering',
+          'These courses cover topics such as circuit analysis, digital systems, and power electronics, providing a solid foundation in the principles and applications of electrical engineering.',
         );
-        break;
       case 'Teaching':
-        return Column(
-          children: <Widget>[
-            Text(
-              '1. Consider taking courses in education, child development, and classroom management.',
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              '2. Participate in volunteer work at a school or tutoring center to gain hands-on experience.',
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              '3. Read education journals and attend workshops to stay updated with the latest teaching methods.',
-              textAlign: TextAlign.center,
-            ),
-          ],
+        return recommendationCard(
+          'Education Technology',
+          'These courses focus on the integration of technology in the classroom, teaching you how to enhance learning experiences and adapt to the evolving educational landscape.',
         );
-        break;
       case 'Nursing':
-        return Column(
-          children
-
-: <Widget>[
-const Text(
-'1. Consider taking courses in anatomy, physiology, and pharmacology.',
-textAlign: TextAlign.center,
-),
-const SizedBox(height: 10),
-Text(
-'2. Participate in volunteer work at a hospital or clinic to gain hands-on experience.',
-textAlign: TextAlign.center,
-),
-const SizedBox(height: 10),
-Text(
-'3. Read nursing journals and attend workshops to stay updated with the latest nursing practices.',
-textAlign: TextAlign.center,
-),
-],
-);
-break;
-default:
-return Column(
-children: <Widget>[
-Text(
-'Sorry, we do not have any recommendations for this interest at the moment.',
-textAlign: TextAlign.center,
-),
-],
-);
-break;
-}
-}
+        return recommendationCard(
+          'Community Nursing',
+          'These courses emphasize the role of nurses in promoting health and well-being in diverse communities, focusing on areas such as health promotion, disease prevention, and health education.',
+        );
+      default:
+        return Text(
+          'Sorry, we do not have any recommendations for this interest at the moment.',
+          textAlign: TextAlign.center,
+        );
+    }
+  }
 }
