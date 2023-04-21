@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:dashboard/screens/components/courses/course_recommendation.dart';
 import 'package:dashboard/screens/onboard.dart';
+import 'package:flutter/services.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,6 +36,7 @@ class Cluster {
     double average = totalPoints / count * 4;
     return average.round();
   }
+  
 
   int _getPointsFromGrade(String grade) {
     int points = 0;
@@ -84,9 +87,10 @@ class Cluster {
 class MyApp extends StatefulWidget {
   final String interest;
 
-  MyApp({required this.interest});
+  const MyApp({super.key, required this.interest});
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyAppState createState() => _MyAppState();
 }
 
@@ -98,11 +102,25 @@ class _MyAppState extends State<MyApp> {
     isLoading = true;
   });
 
-  await Future.delayed(const Duration(seconds: 2));
-
-  setState(() {
-    isLoading = false;
-  });
+  showDialog(
+    context: context,
+    barrierDismissible: false,
+    builder: (BuildContext context) {
+      return Dialog(
+        child: Container(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CircularProgressIndicator(),
+              const SizedBox(height: 10),
+              Text("Loading available courses..."),
+            ],
+          ),
+        ),
+      );
+    },
+  );
 
   Navigator.push(
     context,
@@ -110,12 +128,16 @@ class _MyAppState extends State<MyApp> {
       builder: (context) => CourseRecommendation(
         interest: widget.interest, // Pass the user's selected interest
         points: _clusterPoints,
-        isLoading: ValueNotifier<bool>(false), // Pass the ValueNotifier to the next screen
+        isLoading: ValueNotifier<bool>(true), // Pass the ValueNotifier to the next screen
       ),
     ),
-  );
+  ).then((_) {
+    // Set the isLoading value to false once the new screen is displayed
+    setState(() {
+      isLoading = false;
+    });
+  });
 }
-
 
   final TextEditingController _grade1Controller = TextEditingController();
   final TextEditingController _grade2Controller = TextEditingController();
@@ -147,12 +169,15 @@ class _MyAppState extends State<MyApp> {
   }
 
   String _getClusterPointsMessage() {
+    // ignore: unnecessary_null_comparison
     if (_clusterPoints == null) {
       return 'Enter your grades to calculate your cluster points.';
     } else {
       return 'Your cluster points are $_clusterPoints.';
     }
   }
+
+
 
   @override
   Widget build(BuildContext context) {
