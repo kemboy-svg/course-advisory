@@ -1,13 +1,7 @@
-import 'package:dashboard/screens/components/chart_container.dart';
-import 'package:dashboard/widgets/activity_header.dart';
-import 'package:dashboard/widgets/bar_chart.dart';
-import 'package:dashboard/widgets/courses_grid.dart';
-import 'package:dashboard/widgets/planing_grid.dart';
-import 'package:dashboard/widgets/statistics_grid.dart';
+
 import 'package:flutter/material.dart';
 
 import '../constant.dart';
-import '../widgets/planing_header.dart';
 import 'components/side_menu.dart';
 
 class MainScreen extends StatelessWidget {
@@ -88,18 +82,9 @@ class MainScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const CourseGrid(),
-              const SizedBox(
-                height: 20,
-              ),
-              const PlaningHeader(),
-              const SizedBox(
-                height: 15,
-              ),
-              const PlaningGrid(),
-              const SizedBox(
-                height: 15,
-              ),
+              
+             
+             
               const Text(
                 "Statistics",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
@@ -107,12 +92,8 @@ class MainScreen extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              const StatisticsGrid(),
-              const SizedBox(
-                height: 15,
-              ),
-              const ActivityHeader(),
-              const ChartContainer(chart: BarChartContent())
+              
+             
             ],
           ),
         ),
